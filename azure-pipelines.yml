@@ -30,7 +30,7 @@ steps:
   inputs:
     command: 'custom'
     workingDir: '$(Build.Repository.LocalPath)/package.json' # 同様に package.json のあるフォルダを指定。
-    customCommand: customCommand: 'run build validate $(Build.Repository.LocalPath)/<Root-folder-from-Git-configuration-settings-in-ADF> /subscriptions/ea31078b-52fb-42f3-b6ef-430d9414efc0/resourceGroups/rg-datafactory-test/providers/Microsoft.DataFactory/factories/vsk-datafactory-test'
+    customCommand: customCommand: 'run build validate $(Build.Repository.LocalPath)/subscriptions/ea31078b-52fb-42f3-b6ef-430d9414efc0/resourceGroups/rg-datafactory-test/providers/Microsoft.DataFactory/factories/vsk-datafactory-test'
   displayName: 'Validate'
 
 # Validate and then generate the ARM template into the destination folder, which is the same as selecting "Publish" from the UX.
@@ -40,7 +40,7 @@ steps:
   inputs:
     command: 'custom'
     workingDir: '$(Build.Repository.LocalPath)/package.json' # 同様に package.json のあるフォルダを指定。
-    customCommand: 'run build export $(Build.Repository.LocalPath)/<Root-folder-from-Git-configuration-settings-in-ADF> /subscriptions/ea31078b-52fb-42f3-b6ef-430d9414efc0/resourceGroups/rg-datafactory-test/providers/Microsoft.DataFactory/factories/vsk-datafactory-test "ArmTemplate"'
+    customCommand: 'run build export $(Build.Repository.LocalPath)/subscriptions/ea31078b-52fb-42f3-b6ef-430d9414efc0/resourceGroups/rg-datafactory-test/providers/Microsoft.DataFactory/factories/vsk-datafactory-test "ArmTemplate"'
   displayName: 'Validate and Generate ARM template'
 
 # Publish the artifact to be used as a source for a release pipeline.
