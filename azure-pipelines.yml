@@ -48,3 +48,5 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Build.Repository.LocalPath)/ArmTemplate' # 同様に package.json のあるフォルダを指定。ルートに置いた場合は /<folder-of-the-package.json-file> 部分を削除してもOK
+    artifact: 'ArmTemplates'
+    publishLocation: 'pipeline'
